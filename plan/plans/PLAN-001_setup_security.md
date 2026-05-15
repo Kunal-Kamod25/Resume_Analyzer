@@ -1,7 +1,7 @@
 # PLAN-001: Pre-Work — Repository Setup, Security & Dependencies
 
 **Created:** 2026-05-14
-**Status:** Draft
+**Status:** In-Progress
 **Addresses:** Establish a secure, reproducible dev environment. Set up git, Docker, CI/CD skeleton, pinned dependencies, and local dev setup. This is the foundation for all feature work.
 
 ---
