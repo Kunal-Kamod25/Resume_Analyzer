@@ -1,20 +1,24 @@
-# Reconciliation Report — spec.md ↔ Current Implementation (RECON-003)
+# Reconciliation Report — spec.md ↔ Current Implementation (RECON-004)
 
-**Report ID:** RECON-003
+**Report ID:** RECON-004
 **Date:** 2026-05-15
 **Scope:** Compare project specification (`spec.md`) against actual implementation after:
 - Feature 0 (Pre-Work: Setup & Security) ✅
 - Feature 1 Step 1 (Frontend Setup & Dependencies) ✅
 - Feature 2 Step 1 (Backend NLP Extraction) ✅
+- PLAN-004 Step 1 (Frontend Foundation: Folder Structure, Redux, API Client) ✅
 **Purpose:** Identify all gaps between documentation and reality; track drift; repriorize if needed
 
 ---
 
 ## Executive Summary
 
-After completing **Feature 0, Feature 1 Step 1, and Feature 2 Step 1**, the project is **well-aligned** with spec.md. Core infrastructure, frontend tooling, and backend NLP foundation are all implemented. We're on track for a functioning MVP.
+After completing **Feature 0, Feature 1 Step 1, Feature 2 Step 1, and PLAN-004 Step 1**, the project is **well-aligned** with spec.md and ready for parallel development. Core infrastructure, frontend tooling, backend NLP foundation, AND frontend state management are all implemented. We're on track for a functioning MVP.
 
-**Key Milestone:** Backend NLP pipeline now operational for text extraction, normalization, and skill database lookups. Ready for entity extraction in Step 2.
+**Key Milestone:**
+- Backend NLP pipeline operational for text extraction, normalization, and skill database lookups ✅
+- Frontend folder structure complete with Redux store, API client, and routing configured ✅
+- Ready to begin Phase 1 (upload feature) simultaneously on frontend and backend ✅
 
 ### Documents vs Reality — Key Alignment
 
@@ -104,7 +108,7 @@ Core Infrastructure
   ✅ README with setup instructions
   ✅ Project documentation (spec.md, plans, reports)
 
-Frontend (Feature 1)
+Frontend (Feature 1 - PLAN-004)
   ✅ Vite build tool configured
   ✅ TypeScript strict mode configured
   ✅ Redux Toolkit + react-redux installed
@@ -112,21 +116,35 @@ Frontend (Feature 1)
   ✅ Axios HTTP client installed
   ✅ React Router v6 installed
   ✅ React Hook Form + Zod installed
-  🔄 Folder structure (components, pages, services, store, types, utils)
-  ⏳ React components (UploadSection, ResultsPanel, ScoreCard, etc.)
-  ⏳ Redux slices (analysisSlice, uiSlice)
-  ⏳ API client integration with backend
-
-Backend (Feature 2+)
-  ⏳ `/api/v1/analyze` endpoint
-  ⏳ NLP extraction logic (skills, experience, education)
+  ✅ Folder structure (components, pages, services, store, types, utils, hooks)
+  ✅ Redux slices (analysisSlice, uiSlice)
+  ✅ Redux store configuration (index.ts)
+  ✅ API client (resumeService.ts) with all endpoints
+  ✅ TypeScript interfaces (api.ts) for all request/response types
+  ✅ Pages (HomePage.tsx, HistoryPage.tsx)
+  ✅ App.tsx with routing and theming
+  ✅ Custom Redux hooks (useAppDispatch, useAppSelector)
+  ✅ Global styling (index.css, App.css)
+  ✅ HTML template (index.html)
+  🔄 React components (UploadSection, ResultsPanel, ScoreCard, etc.) - Ready to build Phase 1
+  
+Backend (Feature 2 - PLAN-003)
+  ✅ Resume text extraction (extractor.py)
+  ✅ Text normalization (text_cleaner.py)
+  ✅ Skill database (skills.json with 130+ IT skills)
+  ✅ Parser foundation (parser.py)
+  ✅ Unit tests (test_extractor.py with 10+ tests)
+  🔄 `/api/v1/upload` endpoint - Ready to build Phase 1
+  ⏳ `/api/v1/analyze` endpoint - Phase 2
+  ⏳ NLP entity extraction (skills, experience, education)
   ⏳ Fit scoring algorithm
-  ⏳ PDF parsing (PyPDF2 + pdfplumber)
-
+  
 Testing
-  ⏳ Backend unit tests (pytest)
+  ✅ Backend unit tests (pytest 7.4.4 with 10+ tests)
+  🔄 Backend integration tests (API endpoints)
   ⏳ Frontend component tests (React Testing Library)
-  ⏳ Integration tests
+  ⏳ E2E tests
+```
 
 ---
 
