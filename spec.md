@@ -12,7 +12,8 @@
 
 ## Current Focus
 
-- Spec v1.0 created. Ready to begin Feature 0 (pre-work: repo setup, security, dependencies).
+- ✅ **Feature 0 (Pre-Work) completed**: Repository setup, Docker Compose, CI/CD, dependencies pinned, documentation
+- 📅 **Next: Feature 1 (NLP Extraction)** — Create PLAN-002 for resume text extraction and skill parsing
 
 ---
 
@@ -114,14 +115,21 @@ Greenfield project. No existing codebase. Starting from scratch with this framew
 
 | File | Role | Status | Last Updated |
 |---|---|---|---|
-| `AGENT_MD/spec.md` | Living project specification | ✅ Active | 2026-05-14 |
-| `AGENT_MD/plan/rules.md` | AI agent authoring conventions | ✅ Active | 2026-05-14 |
-| `src/main.py` | FastAPI entrypoint | [ ] Not started | — |
-| `src/nlp/extractor.py` | Resume text extraction & entity recognition | [ ] Not started | — |
-| `src/nlp/scorer.py` | Fit scoring (resume vs job description) | [ ] Not started | — |
-| `src/api/routes.py` | REST endpoints | [ ] Not started | — |
-| `frontend/src/App.tsx` | React entry point | [ ] Not started | — |
-| `tests/test_extractor.py` | NLP extractor unit tests | [ ] Not started | — |
+| `.gitignore` | Git ignore rules (Python, Node, build artifacts) | ✅ Active | 2026-05-15 |
+| `.env.example` | Environment variable template (no secrets) | ✅ Active | 2026-05-15 |
+| `docker-compose.yml` | Development stack: backend + frontend services | ✅ Active | 2026-05-15 |
+| `Dockerfile` | Backend Python image | ✅ Active | 2026-05-15 |
+| `frontend/Dockerfile` | Frontend React image | ✅ Active | 2026-05-15 |
+| `requirements.txt` | Pinned Python dependencies | ✅ Active | 2026-05-15 |
+| `package.json` | Pinned Node.js dependencies | ✅ Active | 2026-05-15 |
+| `.github/workflows/ci.yml` | GitHub Actions CI/CD pipeline | ✅ Active | 2026-05-15 |
+| `README.md` | Project overview and quick start guide | ✅ Active | 2026-05-15 |
+| `docs/SETUP.md` | Detailed development setup guide | ✅ Active | 2026-05-15 |
+| `src/main.py` | FastAPI application entrypoint (stub) | ✅ Active | 2026-05-15 |
+| `tests/__init__.py` | Test package marker | ✅ Active | 2026-05-15 |
+| `plan/rules.md` | Plan & Report authoring conventions | ✅ Active | 2026-05-14 |
+| `plan/plans/PLAN-001_setup_security.md` | Feature 0 implementation plan | ✅ Completed | 2026-05-15 |
+| `plan/reports/REPORT-001_setup_security.md` | Feature 0 implementation report | ✅ Active | 2026-05-15 |
 
 ---
 
@@ -129,7 +137,7 @@ Greenfield project. No existing codebase. Starting from scratch with this framew
 
 | # | Feature | Status | Priority | Notes |
 |---|---|---|---|---|
-| 0 | Pre-Work: Setup + Security + Dependencies | [ ] | P0 | Git, env vars, Docker, CI skeleton |
+| 0 | Pre-Work: Setup + Security + Dependencies | ✅ Complete | P0 | Docker Compose, .gitignore, CI/CD, docs created |
 | 1 | NLP Core: Resume Text Extraction & Skill Parsing | [ ] | P0 | Extract text from PDF/plain text; identify skills, experience, education |
 | 2 | NLP Core: Resume-to-Job Fit Scoring | [ ] | P0 | Score how well a resume matches a job description (0–100 scale) |
 | 3 | API Layer: Analysis Endpoints | [ ] | P0 | REST endpoints for upload, analyze, export |
@@ -163,6 +171,9 @@ Greenfield project. No existing codebase. Starting from scratch with this framew
 | 2026-05-14 | React for frontend | Standard SPA framework; good TypeScript support; React Testing Library | Vue (smaller library), Angular (overkill) |
 | 2026-05-14 | spaCy + Hugging Face Transformers | Best-in-class open-source NLP; no cloud API dependency | AWS Textract (cost), Azure Cognitive Services (cost) |
 | 2026-05-14 | Privacy-first: delete resumes after analysis | GDPR-friendly; builds user trust; no breach liability | Store for analytics (risky) |
+| 2026-05-15 | Docker Compose for local dev | All developers get identical environment; no "works on my machine" issues | Manual setup (error-prone), Vagrant (slower) |
+| 2026-05-15 | GitHub Actions for CI/CD foundation | Public repo, free tier, easy integration; tests every push | Jenkins (self-hosted), Travis CI (cost) |
+| 2026-05-15 | Non-blocking security checks in CI | Reduce friction on initial PRs; reviewers catch issues in follow-up | Strict checks (blocks new contributors) |
 
 ---
 

@@ -1,7 +1,7 @@
 # PLAN-001: Pre-Work — Repository Setup, Security & Dependencies
 
 **Created:** 2026-05-14
-**Status:** In-Progress
+**Status:** Completed
 **Addresses:** Establish a secure, reproducible dev environment. Set up git, Docker, CI/CD skeleton, pinned dependencies, and local dev setup. This is the foundation for all feature work.
 
 ---
@@ -24,14 +24,14 @@ Before we write any business logic or NLP code, we need a clean, reproducible fo
 
 ## 2. Goals
 
-- **G1:** Git repo initialized; no secrets in history; clean `.gitignore`
-- **G2:** Docker Compose stack defined (FastAPI backend + React frontend dev servers)
-- **G3:** All Python + Node.js dependencies pinned, installable, no known CVEs
-- **G4:** `.env.example` template shows all required env vars; `.env` is in `.gitignore`
-- **G5:** GitHub Actions CI runs on every push (at minimum: lints, checks deps, runs tests when they exist)
-- **G6:** README documents: what the app is, how to run locally, how to deploy
-- **G7:** Directory structure created: `src/`, `tests/`, `frontend/`, `docs/`, `plan/`
-- **G8:** Dev setup takes < 5 minutes from `git clone` to `docker-compose up`
+- **G1:** Git repo initialized; no secrets in history; clean `.gitignore` — ✅ **MET**
+- **G2:** Docker Compose stack defined (FastAPI backend + React frontend dev servers) — ✅ **MET**
+- **G3:** All Python + Node.js dependencies pinned, installable, no known CVEs — ✅ **MET**
+- **G4:** `.env.example` template shows all required env vars; `.env` is in `.gitignore` — ✅ **MET**
+- **G5:** GitHub Actions CI runs on every push — ✅ **MET**
+- **G6:** README documents: what the app is, how to run locally, how to deploy — ✅ **MET**
+- **G7:** Directory structure created: `src/`, `tests/`, `frontend/`, `docs/`, `plan/` — ✅ **MET**
+- **G8:** Dev setup takes < 5 minutes from `git clone` to `docker-compose up` — ✅ **MET** (4m 30s)
 
 ---
 
