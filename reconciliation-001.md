@@ -1,15 +1,17 @@
 # Reconciliation Report — spec.md ↔ Current Implementation
 
-**Report ID:** RECON-001
+**Report ID:** RECON-002
 **Date:** 2026-05-15
-**Scope:** Compare initial project specification (`spec.md`) against actual implementation after Feature 0 (Pre-Work)
+**Scope:** Compare project specification (`spec.md`) against actual implementation after Feature 0 (Pre-Work) + Feature 1 Step 1 (Frontend Setup)
 **Purpose:** Identify all gaps between documentation and reality; track drift; repriorize if needed
 
 ---
 
 ## Executive Summary
 
-After completing Feature 0 (Pre-Work: Setup & Security), the project is **well-aligned** with spec.md. All infrastructure, scaffolding, and deployment tooling match the specification. No critical gaps found. Minor notes for future features noted below.
+After completing Feature 0 (Pre-Work: Setup & Security) and **Feature 1 Step 1 (Frontend Setup & Dependencies)**, the project is **well-aligned** with spec.md. All infrastructure, deployment tooling, and modern frontend stack match the specification. 
+
+**Key Milestone:** Frontend dev environment now configured with Vite, TypeScript, Redux Toolkit, and Material-UI. Ready for component development.
 
 ### Documents vs Reality — Key Alignment
 
@@ -17,7 +19,10 @@ After completing Feature 0 (Pre-Work: Setup & Security), the project is **well-a
 |---|---|---|---|
 | **Backend Framework** | FastAPI + Python 3.11 | Python 3.11 + FastAPI 0.109.0 | ✅ Met |
 | **NLP Stack** | spaCy + HF Transformers | spaCy 3.7.2 + transformers 4.38.2 | ✅ Met |
-| **Frontend** | React 18 + TypeScript | React 18 (scaffolded) | ✅ Met |
+| **Frontend Build** | React 18 + TypeScript | Vite + React 18 + TypeScript (strict mode) | ✅ Met (Upgraded) |
+| **Frontend State** | Not specified | Redux Toolkit 1.9.7 configured | ✅ Enhanced |
+| **Frontend UI Library** | Not specified | Material-UI 5.14.0 installed | ✅ Enhanced |
+| **HTTP Client** | Not specified | Axios 1.6.2 with proxy configured | ✅ Enhanced |
 | **Containerization** | Docker + Docker Compose | Docker Compose with 2 services | ✅ Met |
 | **CI/CD** | GitHub Actions | GitHub Actions workflow configured | ✅ Met |
 | **Testing** | pytest + React Testing Library | pytest 7.4.4 configured; React Testing Library ready | ✅ Met |
@@ -28,7 +33,7 @@ After completing Feature 0 (Pre-Work: Setup & Security), the project is **well-a
 
 ## Priority 0 — ✅ ON TRACK (No Action Required)
 
-All foundational elements match spec. No blocking issues.
+All foundational elements match spec. Frontend stack is modern and production-ready.
 
 ### 0.1 Infrastructure & Setup
 
@@ -40,13 +45,132 @@ All foundational elements match spec. No blocking issues.
 - CI/CD pipeline automated
 - README & docs comprehensive
 
-**No changes needed.**
+### 0.2 Frontend Tooling
+
+**Status:** ✅ **Aligned + Enhanced**
+
+- React 18 ✅
+- TypeScript strict mode ✅ (spec didn't mandate this; we added for safety)
+- Build tool: Vite instead of Create React App (better performance)
+- State management: Redux Toolkit (not in spec, added per frontend needs)
+- UI library: Material-UI (not in spec, added for professional UI)
+- HTTP: Axios with proxy configured
+- Forms: React Hook Form + Zod validation
+
+**Note:** Frontend tech stack _exceeds_ the basic spec by adding modern best practices.
+
+**No changes needed. Spec is satisfied; implementation is enhanced.**
 
 ---
 
-## Priority 1 — 🟡 MINOR (Track for Next Feature)
+## Priority 1 — 🟡 MINOR NOTES (Track for Next Features)
 
 ### 1.1 Database Schema Not Yet Defined
+
+**Status:** Deferred to Feature 3  
+**Action:** When implementing data persistence, update spec Database section with schema design.
+
+---
+
+## Priority 2 — ℹ️ INFORMATION (No Action)
+
+### 2.1 Frontend Components Not Yet Built
+
+**Status:** Expected — Step 1 was setup only  
+**Timeline:** Step 2 (component architecture) starting; full UI by Feature 1.5
+
+### 2.2 API Endpoints Partially Implemented
+
+**Status:** Backend health check endpoints exist; `/api/v1/analyze` endpoint not yet built  
+**Timeline:** Feature 2 (NLP Extraction) will implement core analysis endpoint
+
+---
+
+## Codebase Inventory
+
+```
+✅ = Implemented | 🔄 = In Progress | ⏳ = Not Started
+
+Core Infrastructure
+  ✅ Git repository initialized with .gitignore
+  ✅ Docker Compose multi-service stack
+  ✅ Backend FastAPI skeleton (main.py + health check)
+  ✅ Frontend React + TypeScript scaffolding
+  ✅ Environment variable management (.env + .env.example)
+  ✅ GitHub Actions CI/CD skeleton
+  ✅ README with setup instructions
+  ✅ Project documentation (spec.md, plans, reports)
+
+Frontend (Feature 1)
+  ✅ Vite build tool configured
+  ✅ TypeScript strict mode configured
+  ✅ Redux Toolkit + react-redux installed
+  ✅ Material-UI (MUI) installed
+  ✅ Axios HTTP client installed
+  ✅ React Router v6 installed
+  ✅ React Hook Form + Zod installed
+  🔄 Folder structure (components, pages, services, store, types, utils)
+  ⏳ React components (UploadSection, ResultsPanel, ScoreCard, etc.)
+  ⏳ Redux slices (analysisSlice, uiSlice)
+  ⏳ API client integration with backend
+
+Backend (Feature 2+)
+  ⏳ `/api/v1/analyze` endpoint
+  ⏳ NLP extraction logic (skills, experience, education)
+  ⏳ Fit scoring algorithm
+  ⏳ PDF parsing (PyPDF2 + pdfplumber)
+
+Testing
+  ⏳ Backend unit tests (pytest)
+  ⏳ Frontend component tests (React Testing Library)
+  ⏳ Integration tests
+
+---
+
+## Decision Log
+
+### Decision 001 (2026-05-14): Use Vite over Create React App
+- **Rationale:** Vite is 5-10x faster, ESM-native, meets modern standards
+- **Impact:** Reduced build times in development and production
+- **Status:** ✅ Implemented
+
+### Decision 002 (2026-05-15): Add Redux Toolkit for State Management
+- **Rationale:** Frontend will have complex state (analysis results, UI loading, history); Redux Toolkit reduces boilerplate
+- **Impact:** Centralized state management; easier testing; scalable
+- **Status:** ✅ Implemented
+
+### Decision 003 (2026-05-15): Use Material-UI for Components
+- **Rationale:** Professional, well-documented, accessible by default; speeds up UI development
+- **Impact:** Consistent design language; less custom CSS needed
+- **Status:** ✅ Implemented
+
+### Decision 004 (2026-05-15): Proxy /api calls in Vite dev server
+- **Rationale:** Avoids CORS issues during development; matches production API structure
+- **Impact:** Seamless dev experience; no CORS headaches
+- **Status:** ✅ Implemented
+
+---
+
+## Gaps & Recommendations
+
+### No Critical Gaps 🎯
+
+All foundational specification elements are implemented or in progress. Frontend and backend architectures are sound and align with spec.
+
+### Minor Recommendations
+
+1. **Document API response types** — Before starting Feature 2, define TypeScript interfaces for API responses so frontend can type-check early
+2. **Finalize NLP extraction scope** — Specify exactly which skills/certifications to extract to guide backend implementation
+3. **Design PDF report format** — Mock up the final PDF output to guide frontend report generation logic
+
+---
+
+## Next Reconciliation
+
+**Planned:** 2026-05-22 (after Feature 1 Step 2: Folder Structure & Redux Setup)  
+**Scope:** Verify component architecture, Redux slices, API client setup
+
+
 
 **Gap:** Spec mentions storage for "job descriptions, analysis history" but v1 is stateless (no DB).
 

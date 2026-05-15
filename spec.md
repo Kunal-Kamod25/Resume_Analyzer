@@ -13,7 +13,9 @@
 ## Current Focus
 
 - ✅ **Feature 0 (Pre-Work) completed**: Repository setup, Docker Compose, CI/CD, dependencies pinned, documentation
-- 📅 **Next: Feature 1 (NLP Extraction)** — Create PLAN-002 for resume text extraction and skill parsing
+- � **Feature 1 (Frontend UI - In Progress)**: React 18 + TypeScript + Vite + Redux toolkit + Material-UI configured. Step 1 complete (dependencies installed), moving to component architecture (Step 2).
+- 📅 **Next: Feature 1.2 (Folder Structure & Redux Setup)** — Create page/component structure, initialize Redux store with analysisSlice and uiSlice
+- 📋 **Planned: Feature 2 (NLP Extraction)** — Resume text extraction and skill parsing
 
 ---
 
