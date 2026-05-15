@@ -13,9 +13,12 @@
 ## Current Focus
 
 - ✅ **Feature 0 (Pre-Work) completed**: Repository setup, Docker Compose, CI/CD, dependencies pinned, documentation
-- � **Feature 1 (Frontend UI - In Progress)**: React 18 + TypeScript + Vite + Redux toolkit + Material-UI configured. Step 1 complete (dependencies installed), moving to component architecture (Step 2).
-- 📅 **Next: Feature 1.2 (Folder Structure & Redux Setup)** — Create page/component structure, initialize Redux store with analysisSlice and uiSlice
-- 📋 **Planned: Feature 2 (NLP Extraction)** — Resume text extraction and skill parsing
+- 🔄 **Feature 1 (Frontend UI - Paused)**: React 18 + TypeScript + Vite + Redux toolkit + Material-UI configured. Step 1 complete (dependencies installed), Step 2 planned (folder structure).
+- 🔄 **Feature 2 (Backend NLP - In Progress)**: Resume text extraction working. Step 1 complete (PDF/text parsing, text normalization, skill database). Steps 2-4 planned (entity extraction, fit scoring, API integration).
+- 📅 **Next Priority (Planned):**
+	- Feature 2 Step 2: Skill/Experience/Education extraction using spaCy (4-5 days)
+	- Feature 2 Step 3: Fit scoring algorithm (3 days)
+	- Feature 2 Step 4: `/api/v1/analyze` endpoint (2-3 days)
 
 ---
 

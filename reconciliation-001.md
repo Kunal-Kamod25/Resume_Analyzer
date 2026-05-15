@@ -1,17 +1,20 @@
-# Reconciliation Report — spec.md ↔ Current Implementation
+# Reconciliation Report — spec.md ↔ Current Implementation (RECON-003)
 
-**Report ID:** RECON-002
+**Report ID:** RECON-003
 **Date:** 2026-05-15
-**Scope:** Compare project specification (`spec.md`) against actual implementation after Feature 0 (Pre-Work) + Feature 1 Step 1 (Frontend Setup)
+**Scope:** Compare project specification (`spec.md`) against actual implementation after:
+- Feature 0 (Pre-Work: Setup & Security) ✅
+- Feature 1 Step 1 (Frontend Setup & Dependencies) ✅
+- Feature 2 Step 1 (Backend NLP Extraction) ✅
 **Purpose:** Identify all gaps between documentation and reality; track drift; repriorize if needed
 
 ---
 
 ## Executive Summary
 
-After completing Feature 0 (Pre-Work: Setup & Security) and **Feature 1 Step 1 (Frontend Setup & Dependencies)**, the project is **well-aligned** with spec.md. All infrastructure, deployment tooling, and modern frontend stack match the specification. 
+After completing **Feature 0, Feature 1 Step 1, and Feature 2 Step 1**, the project is **well-aligned** with spec.md. Core infrastructure, frontend tooling, and backend NLP foundation are all implemented. We're on track for a functioning MVP.
 
-**Key Milestone:** Frontend dev environment now configured with Vite, TypeScript, Redux Toolkit, and Material-UI. Ready for component development.
+**Key Milestone:** Backend NLP pipeline now operational for text extraction, normalization, and skill database lookups. Ready for entity extraction in Step 2.
 
 ### Documents vs Reality — Key Alignment
 
